@@ -1,11 +1,7 @@
-# orders/models.py
-
 from django.db import models
-
 from config import settings
 from core.models import TimeStampMixin
 from django.contrib.auth.models import User
-# from accounts.models import CustomerProfile
 from menu.models import Product
 
 
@@ -26,7 +22,6 @@ class Order(TimeStampMixin):
     def get_total_price(self):
         return sum(item.get_total_price() for item in self.items.all())
 
-    # orders/models.py
 
 
 class OrderItem(TimeStampMixin):
