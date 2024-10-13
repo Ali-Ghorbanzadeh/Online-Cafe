@@ -1,5 +1,4 @@
 from django.urls import path
-# from .views import UserOrderListCreateView, OrderUpdateView, CancelOrderView, OrderItemUpdateDeleteView
 from .views import AddToCartAPIView, UserOrderListView, RemoveOrderAPIView, OrderDetailAPIView, FinalizeOrderAPIView
 
 urlpatterns = [
@@ -8,6 +7,4 @@ urlpatterns = [
     path('order/remove/<int:order_id>/', RemoveOrderAPIView.as_view(), name='remove-order'),
     path('api/order/<int:order_id>/', OrderDetailAPIView.as_view(), name='order-detail'),
     path('api/order/finalize/<int:order_id>/', FinalizeOrderAPIView.as_view(), name='finalize-order'),
-    # path('orders/<int:order_id>/mark-as-shipped/', MarkAsShippedAPIView.as_view(), name='mark-as-shipped'),
-
 ]
